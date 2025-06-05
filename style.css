@@ -43,11 +43,58 @@ html {
 
   .NavBar-Holder{
     grid-column: 1/2;
-
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    
   }
+  .Book-Holder{
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+    padding: 30px;
+  }
+  .Book-Holder img{
+    min-width: 80%;
+    background-color: aquamarine;
+    flex-grow: 2;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .Book-Holder p{
+    align-self: flex-start;
+    margin: 0px;
+    padding: 10px;
+  }
+
+/* grid parts */
   .Grid-Holder{
     grid-column: 2/3;
     background-color: #DFD0B8;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(auto-fit, minmax(40%, 1fr));
+
+    gap: 15px ;
+    overflow: scroll;
+  }
+  .Book-Object{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: blue;
+    padding: 15px;
+  }
+  .Book-Object img{
+    min-width: 50%;
+    background-color: aquamarine;
+    flex-grow: 2;
+  }
+  .Book-Object p{
+    align-self: flex-start;
+    margin: 0px;
+    padding: 10px;
   }
 
 /* End of Content */
