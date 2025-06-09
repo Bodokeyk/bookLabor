@@ -77,7 +77,7 @@ html {
     grid-template-rows: repeat(auto-fit, minmax(40%, 1fr));
 
     gap: 15px ;
-    overflow: scroll;
+    overflow: hidden;
   }
   .Book-Object{
     display: flex;
