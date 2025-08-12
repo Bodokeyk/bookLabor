@@ -12,19 +12,48 @@
         <div class="Header-Holder">
             <div class="Main-title">
                 <p>Libraries</p>
+                <span>
+                    <button class="button-AddBook">Add Book</button>
+                </span>
             </div>
         </div>
         <div class="Content-Holder">
+            <!-- dialog box -->
+            <dialog id="alert-dialog">
+                <button class="cancel-button dialog-cancel-button">X</button>
+                <h3>Book Information</h3>
+                <p>Please fill all the blanks</p>
+                <form id="form-Data">
+                    <label for="bookUrl">Url of book Cover
+                        <input type="text" id="bookUrl" name="bookUrl" >
+                    </label>
+                    <label for="bookName">Name of book
+                        <input type="text" id="bookName" name="bookName" required>
+                    </label>
+                    <label for="bookPages">Number of pages
+                        <input type="number" id="bookPages" name="bookPages" required>
+                    </label>
+                    <label for="bookRead">Have you already read this book?
+                        <input type="checkbox" id="bookRead" name="bookRead">
+                    </label>
+                  <button type="submit" formmethod="dialog" class="form-button form-submit">
+                    Ok!</button>
+                  <input type="reset" class="form-button">
+                </form>
+              </dialog>
+
+
             <div class="NavBar-Holder">
-                <!-- <div class="Book-Holder Java-Object">
-                        <img src="" alt="image of book">
+                <div class="Book-Holder Java-Object">
+                        <img src="Books images/book-2-svgrepo-com.svg" alt="image of book">
                         <p></p>
                         <p></p>
                         <p></p>      
-                    </div> -->
+                    </div>
             </div>
             <div class="Grid-Holder">
                 <!-- <div class="Book-Object Java-Object">
+                        <button class="cancel-button bookObject-cancel-button">X</button>
                         <img src="" alt="image of book">
                         <p></p>
                         <p></p>
