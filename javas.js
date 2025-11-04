@@ -1,6 +1,6 @@
 
 const grid_Holder = document.querySelector('.Grid-Holder');
-const navBar_Holder = document.querySelector('.NavBar-Holder')
+const navBar_Book = document.querySelector('.Book-Holder')
 const addBookButton= document.querySelector('.button-AddBook')
 const closeAddBookDialog= document.querySelector('.dialog-cancel-button')
 const formSubmit = document.getElementById('form-Data')
@@ -103,6 +103,15 @@ function Book(url,name,pages,read){
           }
           
         break;
+        default :
+        const pElementsOfNav  = navBar_Book.querySelectorAll('p')
+        pElementsOfNav[0].innerHTML = pElementsOfDiv[0].innerHTML
+        pElementsOfNav[1].innerHTML = pElementsOfDiv[1].innerHTML
+        pElementsOfNav[2].innerHTML = pElementsOfDiv[2].innerHTML
+        
+        
+          
+        break;
       }
       
     });
@@ -147,37 +156,13 @@ function Book(url,name,pages,read){
     https://lenguajehtml.com/html/interactivas/etiqueta-html-dialog/
 
 
--creo que lo arregle, pero de responsive no tiene ni vrga jasdklfjkladsf
-, no chingamos, si se saco la chamba seniores
+/* tengo error con el bookholder
+a la hora de clicker algo fuera del book object vuelve a poner la info de el 
+libro al principio, quiza es algo de anidacion, elementos padres e hijos
+o simplemente un error de logica
+la meta es que el libro sea seleccionado en cualquier parte de su div, y no solo 
+en donde esta el texto o la imagen, y que sea pss el correcto
 
-
-DIAVLASOOO, SE SACOOOOO
-ahora falta lo de cambiar el status de leido, pero si se pudo uno
-se saca el otro
-
-    -nueva idea, cambiar el objeto book por uno nuevo que tenga diferente 
-    el read utilizando el mismo id y solo setearlo
-
-    ya, se pudo, se hizo, pero ahora esta bien qlero mi codigo, espero limpiarlo 
-    un poco maniana o asi
-    
-
-    posiblemente usar el mismo event listener de grid-Holder 
-    (para borrar los libros) solo que ahora enfocado a una label 
-    onde este lo del status leido, tipo toggle ?
-    -agregar un toggle? a  cada bookObject para cambiar el status de read
-    -este boton corrija el display y tambien desde el map
-
-    o si no, poor otra parte esto
-    To facilitate this you will want to create Book prototype
-     function that toggles a book instance’s read status.
-    
-
-    -posiblemente corregir el uso excesivo de acciones en el eventListener
-    de borra libros, convertirlos a funciones por aparte?
-    -posiblemente otro metodo que corrija el empezar toda la operacion con
-    el eventlistener de la form (https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Solve_HTML_problems/Use_data_attributes)
-    -arreglar el display del bookholder
-    -
-
-   */
+eso y creo que con esto esta todo a menos que si quiera meterle imagenes como con
+una lista, seria mejor que dejar el link a disposicion, correjir eso
+*/
