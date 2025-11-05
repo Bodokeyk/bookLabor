@@ -163,6 +163,7 @@ o simplemente un error de logica
 la meta es que el libro sea seleccionado en cualquier parte de su div, y no solo 
 en donde esta el texto o la imagen, y que sea pss el correcto
 
-eso y creo que con esto esta todo a menos que si quiera meterle imagenes como con
-una lista, seria mejor que dejar el link a disposicion, correjir eso
+ready, tiene la lista, solo falta ingresar los links para las imagenes base de
+cada genero y que funcionen correctamente, ademas que si pase los datos 
+correctamente
 */

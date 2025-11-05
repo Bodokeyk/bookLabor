@@ -24,8 +24,15 @@
                 <h3>Book Information</h3>
                 <p>Please fill all the blanks</p>
                 <form id="form-Data">
-                    <label for="bookUrl">Url of book Cover
-                        <input type="text" id="bookUrl" name="bookUrl" >
+                    <label for="bookUrl">Book genre
+                        <select id="bookUrl" name="bookUrl" required >
+                            <option disabled selected value> -- select an option -- </option>
+                            <option value="">Fantasy</option>
+                            <option value="">Love</option>
+                            <option value="">Mistery</option>
+                            <option value="">scientific</option>
+                            <option value="">Other</option>
+                        </select>
                     </label>
                     <label for="bookName">Name of book
                         <input type="text" id="bookName" name="bookName" required>
