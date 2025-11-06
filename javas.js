@@ -61,59 +61,67 @@ function Book(url,name,pages,read){
 
 
     grid_Holder.addEventListener("click", function(event){
-
-      const divToDelete = event.target.parentNode;
-      const pElementsOfDiv = divToDelete.querySelectorAll('p')
-      switch(event.target.classList[1] || event.target.classList[0])
-      {
-        case "bookObject-cancel-button" :
-        if(confirm("Delete "+ pElementsOfDiv[0].innerHTML + "?" )){
-          bookLibrary.delete(pElementsOfDiv[pElementsOfDiv.length-1].innerHTML)
-          divToDelete.parentNode.removeChild(divToDelete)
-
-        }
-        break;
-        case "readUsageFor":
-          
-          switch(pElementsOfDiv[2].innerHTML){
-            case "Read":
-            bookLibrary.delete(pElementsOfDiv[pElementsOfDiv.length-1].innerHTML)
-            bookLibrary.set(pElementsOfDiv[pElementsOfDiv.length-1].innerHTML,
-              new Book(
-                divToDelete.querySelector('img').innerHTML,
-                pElementsOfDiv[0].innerHTML,
-                pElementsOfDiv[1].innerHTML,
-                false
-              )
-            )
-            divToDelete.querySelector('.readUsageFor').innerHTML = "Not read yet"
-            break;
-            case "Not read yet":
-            bookLibrary.delete(pElementsOfDiv[pElementsOfDiv.length-1].innerHTML)
-            bookLibrary.set(pElementsOfDiv[pElementsOfDiv.length-1].innerHTML,
-              new Book(
-                divToDelete.querySelector('img').innerHTML,
-                pElementsOfDiv[0].innerHTML,
-                pElementsOfDiv[1].innerHTML,
-                true
-              )
-            )
-            divToDelete.querySelector('.readUsageFor').innerHTML = "Read"
-            break;
-          }
-          
-        break;
-        default :
-        const pElementsOfNav  = navBar_Book.querySelectorAll('p')
-        pElementsOfNav[0].innerHTML = pElementsOfDiv[0].innerHTML
-        pElementsOfNav[1].innerHTML = pElementsOfDiv[1].innerHTML
-        pElementsOfNav[2].innerHTML = pElementsOfDiv[2].innerHTML
-        
-        
-          
-        break;
-      }
       
+     
+      if(!event.target.parentNode.classList.contains("Content-Holder")){
+
+        const divToDelete = event.target.parentNode.classList.contains("Book-Object")? event.target.parentNode:event.target;
+       
+        const pElementsOfDiv = divToDelete.querySelectorAll('p')
+        switch(event.target.classList[1] || event.target.classList[0])
+        {
+          case "bookObject-cancel-button" :
+          if(confirm("Delete "+ pElementsOfDiv[0].innerHTML + "?" )){
+            bookLibrary.delete(pElementsOfDiv[pElementsOfDiv.length-1].innerHTML)
+            divToDelete.parentNode.removeChild(divToDelete)
+  
+          }
+          break;
+          case "readUsageFor":
+            
+            switch(pElementsOfDiv[2].innerHTML){
+              case "Read":
+              bookLibrary.delete(pElementsOfDiv[pElementsOfDiv.length-1].innerHTML)
+              bookLibrary.set(pElementsOfDiv[pElementsOfDiv.length-1].innerHTML,
+                new Book(
+                  divToDelete.querySelector('img').innerHTML,
+                  pElementsOfDiv[0].innerHTML,
+                  pElementsOfDiv[1].innerHTML,
+                  false
+                )
+              )
+              divToDelete.querySelector('.readUsageFor').innerHTML = "Not read yet"
+              break;
+              case "Not read yet":
+              bookLibrary.delete(pElementsOfDiv[pElementsOfDiv.length-1].innerHTML)
+              bookLibrary.set(pElementsOfDiv[pElementsOfDiv.length-1].innerHTML,
+                new Book(
+                  divToDelete.querySelector('img').innerHTML,
+                  pElementsOfDiv[0].innerHTML,
+                  pElementsOfDiv[1].innerHTML,
+                  true
+                )
+              )
+              divToDelete.querySelector('.readUsageFor').innerHTML = "Read"
+              break;
+            }
+            
+          break;
+          default :
+          const pElementsOfNav  = navBar_Book.querySelectorAll('p')
+          const imgForHolder = navBar_Book.querySelector("img")
+          const urlForNav = divToDelete.querySelector("img").getAttribute("src")
+          imgForHolder.setAttribute("src", urlForNav)
+          pElementsOfNav[0].innerHTML = pElementsOfDiv[0].innerHTML
+          pElementsOfNav[1].innerHTML = pElementsOfDiv[1].innerHTML
+          pElementsOfNav[2].innerHTML = pElementsOfDiv[2].innerHTML
+          
+          
+            
+          break;
+        }
+        
+      }
     });
 
     addBookButton.addEventListener("click", function () {

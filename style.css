@@ -106,7 +106,7 @@ html {
     flex-direction: column;
     padding: 30px;
     max-width: 100%;
-    background-color: blueviolet;
+    background-color: #6d85ac;
   }
   .Book-Holder img{
     flex-grow: 1;
